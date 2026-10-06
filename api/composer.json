@@ -1,0 +1,15 @@
+{
+    "name": "ccmpt/api",
+    "description": "API for CCMPT",
+    "type": "project",
+    "require": {
+        "intervention/image": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "Controllers\\": "controllers/",
+            "Models\\": "models/"
+        }
+    }
+}

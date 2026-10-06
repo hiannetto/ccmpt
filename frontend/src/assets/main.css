@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Premium Tailored Colors */
+  --c-primary: #0A1930;       /* Deep Navy Blue */
+  --c-primary-light: #162B4A; /* Lighter Navy for surfaces */
+  --c-secondary: #D4AF37;     /* Elegant Gold */
+  --c-secondary-light: #FCEABB;/* Soft Gold Accent */
+  
+  --c-bg: #FCFCFD;            /* Pristine White/Off-White */
+  --c-surface: #FFFFFF;
+  
+  --c-accent-green: #10B981;
+  --c-accent-red: #EF4444;
+  --c-accent-turquoise: #06B6D4;
+  
+  --c-text-main: #1F2937;
+  --c-text-muted: #6B7280;
+  
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Shadows & Glassmorphism */
+  --shadow-sm: 0 2px 8px rgba(10, 25, 48, 0.04);
+  --shadow-md: 0 8px 24px rgba(10, 25, 48, 0.08);
+  --shadow-lg: 0 20px 40px rgba(10, 25, 48, 0.12);
+  --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.25);
+  
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--c-text-main);
+  background-color: var(--c-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--c-primary);
+  line-height: 1.2;
+}
+
+.premium-gradient-text {
+  background: linear-gradient(135deg, var(--c-secondary) 0%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--c-secondary) 0%, #B8860B 100%);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: var(--shadow-gold);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
