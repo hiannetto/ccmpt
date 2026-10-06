@@ -29,6 +29,8 @@ class Photo extends Model {
     public static function format(array $p) {
         $p['id'] = (int) $p['id'];
         $p['gallery_id'] = (int) $p['gallery_id'];
+        if (isset($p['image_path'])) $p['image_url'] = $p['image_path'];
+        if (isset($p['thumbnail_path'])) $p['thumbnail_url'] = $p['thumbnail_path'];
         return $p;
     }
 }

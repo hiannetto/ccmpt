@@ -59,7 +59,10 @@ class GalleryController {
             Response::error('Informe o nome do álbum.', 422);
         }
         $slug = $title === $gallery['title'] ? $gallery['slug'] : Slug::unique($title, 'photo_galleries', $id);
-        $this->galleries->update($id, $title, $slug, Request::input('description', $gallery['description']) ?: null);
+        
+        $coverPhotoId = Request::has('cover_photo_id') ? Request::input('cover_photo_id') : $gallery['cover_photo_id'];
+
+        $this->galleries->update($id, $title, $slug, Request::input('description', $gallery['description']) ?: null, $coverPhotoId);
         Response::json($this->galleries->detail($id));
     }
 

@@ -12,7 +12,7 @@
         <div class="contact-info">
           <h2>Informações de Contato</h2>
           <div class="info-item">
-            <div class="icon">📍</div>
+            <div class="icon"><span class="material-symbols-outlined">location_on</span></div>
             <div>
               <h3>Endereço</h3>
               <p>Rua Exemplo, 123 - Centro<br>Cidade - Estado, 00000-000</p>
@@ -20,7 +20,7 @@
           </div>
           
           <div class="info-item">
-            <div class="icon">📞</div>
+            <div class="icon"><span class="material-symbols-outlined">call</span></div>
             <div>
               <h3>Telefone</h3>
               <p>(00) 0000-0000</p>
@@ -28,7 +28,7 @@
           </div>
           
           <div class="info-item">
-            <div class="icon">✉️</div>
+            <div class="icon"><span class="material-symbols-outlined">mail</span></div>
             <div>
               <h3>E-mail</h3>
               <p>contato@ccmpt.com.br</p>
@@ -36,7 +36,7 @@
           </div>
           
           <div class="info-item">
-            <div class="icon">🕒</div>
+            <div class="icon"><span class="material-symbols-outlined">schedule</span></div>
             <div>
               <h3>Horário de Funcionamento</h3>
               <p>Segunda a Sexta: 08h às 18h<br>Sábados: 08h às 12h</p>
@@ -69,14 +69,7 @@
 
             <div class="form-group">
               <label for="subject">Assunto</label>
-              <select id="subject" v-model="form.subject" required>
-                <option value="" disabled>Selecione um assunto...</option>
-                <option value="Dúvida">Dúvida Geral</option>
-                <option value="Doação de Acervo">Doação de Acervo</option>
-                <option value="Agendamento">Agendamento de Visita Escolar</option>
-                <option value="Projetos Sociais">Voluntariado / Projetos Sociais</option>
-                <option value="Outro">Outro</option>
-              </select>
+              <input type="text" id="subject" v-model="form.subject" required placeholder="Qual o motivo do contato?" />
             </div>
 
             <div class="form-group">
@@ -135,6 +128,8 @@ const submitForm = async () => {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
 .page-header {
   background-color: var(--color-primary, #0B1C3D);
   color: white;
@@ -184,7 +179,6 @@ const submitForm = async () => {
 }
 
 .info-item .icon {
-  font-size: 1.5rem;
   color: var(--color-secondary, #D4AF37);
   background: #f8f9fa;
   width: 48px;
@@ -193,6 +187,10 @@ const submitForm = async () => {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.info-item .icon .material-symbols-outlined {
+  font-size: 24px;
 }
 
 .info-item h3 {

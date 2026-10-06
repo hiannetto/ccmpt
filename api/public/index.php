@@ -102,6 +102,9 @@ $router->add('GET',    '/api/memorial/:id', 'MemorialController@show');
 $router->add('POST',   '/api/memorial', 'MemorialController@store', $admin);
 $router->add('PUT',    '/api/memorial/:id', 'MemorialController@update', $admin);
 $router->add('DELETE', '/api/memorial/:id', 'MemorialController@destroy', $admin);
+$router->add('POST',   '/api/memorial/:id/images', 'MemorialController@uploadImage', $admin);
+$router->add('PUT',    '/api/memorial/:id/images/:imageId', 'MemorialController@updateImage', $admin);
+$router->add('PUT',    '/api/memorial/:id/images/:imageId/main', 'MemorialController@setMainImage', $admin);
 $router->add('DELETE', '/api/memorial/:id/images/:imageId', 'MemorialController@destroyImage', $admin);
 
 // ---------- Arquivo Fotográfico (Admin + Editor; excluir álbum: Admin) ----------

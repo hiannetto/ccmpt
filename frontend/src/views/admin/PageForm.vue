@@ -1,7 +1,7 @@
 <template>
   <div class="form-container">
     <div class="header-actions">
-      <h2>Nova Página Institucional</h2>
+      <h2>{{ isEditing ? 'Editar Página Institucional' : 'Nova Página Institucional' }}</h2>
       <router-link to="/admin/paginas" class="btn-outline">Voltar</router-link>
     </div>
 
@@ -12,6 +12,7 @@
       <div class="form-group">
         <label for="title">Título da Página</label>
         <input type="text" id="title" v-model="form.title" required />
+        <small class="hint">O endereço (link) da página é gerado automaticamente a partir do título.</small>
       </div>
 
       <div class="form-group">
@@ -40,21 +41,47 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import api from '../../api';
 import RichTextEditor from '../../components/RichTextEditor.vue';
 
 const router = useRouter();
+const route = useRoute();
+
 const loading = ref(false);
 const error = ref('');
 const success = ref('');
+const isEditing = ref(false);
+const pageId = ref(null);
 
 const form = ref({
   title: '',
   content: '',
   is_published: true,
   show_in_menu: true
+});
+
+onMounted(async () => {
+  if (route.query.id) {
+    isEditing.value = true;
+    pageId.value = route.query.id;
+    loading.value = true;
+    try {
+      const res = await api.get(`/pages/${pageId.value}`);
+      const data = res.data;
+      form.value = {
+        title: data.title,
+        content: data.content,
+        is_published: !!data.is_published,
+        show_in_menu: !!data.show_in_menu
+      };
+    } catch (e) {
+      error.value = 'Erro ao carregar os dados da página.';
+    } finally {
+      loading.value = false;
+    }
+  }
 });
 
 const savePage = async () => {
@@ -69,10 +96,16 @@ const savePage = async () => {
       show_in_menu: form.value.show_in_menu ? 1 : 0
     };
     
-    await api.post('/pages', payload);
-    success.value = 'Página criada com sucesso!';
+    if (isEditing.value) {
+      await api.put(`/pages/${pageId.value}`, payload);
+      success.value = 'Página atualizada com sucesso!';
+    } else {
+      await api.post('/pages', payload);
+      success.value = 'Página criada com sucesso!';
+    }
+    
     setTimeout(() => {
-      router.push('/admin'); // Temporário até ter listagem de páginas
+      router.push('/admin/paginas');
     }, 1500);
   } catch (err) {
     error.value = err.response?.data?.error || 'Erro ao salvar a página.';
@@ -127,6 +160,11 @@ h2 {
 label {
   font-weight: 500;
   color: #333;
+}
+
+.hint {
+  color: #6c757d;
+  font-size: 0.85rem;
 }
 
 input[type="text"] {

@@ -83,7 +83,9 @@ CREATE TABLE `memorial_images` (
   `id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `image_url` varchar(500) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `caption` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -95,8 +97,16 @@ CREATE TABLE `memorial_images` (
 CREATE TABLE `memorial_items` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `historical_description` text NOT NULL,
-  `main_image_url` varchar(500) NOT NULL COMMENT 'URL do Firebase/Storage',
+  `dating_label` varchar(100) DEFAULT NULL COMMENT 'Datação em texto livre (ex.: c. 1965, década de 1970)',
+  `year` smallint(6) DEFAULT NULL COMMENT 'Ano de referência para ordenação e sugestão de década',
+  `inventory_number` varchar(50) DEFAULT NULL COMMENT 'Nº de inventário / tombo',
+  `historical_description` mediumtext NOT NULL,
+  `material` varchar(255) DEFAULT NULL,
+  `dimensions` varchar(255) DEFAULT NULL,
+  `provenance` varchar(255) DEFAULT NULL COMMENT 'Procedência',
+  `conservation_state` varchar(20) DEFAULT NULL COMMENT 'otimo, bom, regular, ruim',
+  `main_image_url` varchar(500) NOT NULL COMMENT 'Caminho local da foto principal em WebP',
+  `main_image_caption` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -123,7 +133,7 @@ CREATE TABLE `pages` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
-  `content` text NOT NULL,
+  `content` mediumtext NOT NULL,
   `is_published` tinyint(1) NOT NULL DEFAULT 1,
   `show_in_menu` tinyint(1) NOT NULL DEFAULT 1,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -149,6 +159,7 @@ CREATE TABLE `photos` (
   `gallery_id` int(11) NOT NULL,
   `image_path` varchar(500) NOT NULL COMMENT 'Caminho local da foto em WebP (ex: max 1920px)',
   `thumbnail_path` varchar(500) NOT NULL COMMENT 'Caminho local da miniatura em WebP (ex: 400px)',
+  `caption` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL COMMENT 'Palavras-chave separadas por vírgula (ex: Igreja Matriz, Batizado)',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -175,6 +186,7 @@ CREATE TABLE `photo_galleries` (
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `description` text DEFAULT NULL COMMENT 'Breve contexto sobre este lote de fotos',
+  `cover_photo_id` int(11) DEFAULT NULL COMMENT 'Foto de capa escolhida (padrão: a primeira)',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -198,7 +210,7 @@ CREATE TABLE `posts` (
   `type` enum('news','event') NOT NULL DEFAULT 'news',
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
-  `content` text NOT NULL,
+  `content` mediumtext NOT NULL,
   `cover_image_url` varchar(500) DEFAULT NULL,
   `event_date` datetime DEFAULT NULL,
   `is_published` tinyint(1) NOT NULL DEFAULT 1,

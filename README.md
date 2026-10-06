@@ -29,13 +29,13 @@ O sistema possui uma arquitetura moderna e separada (Decoupled), com o frontend 
 * **Mural de Notícias:** Listagem e leitura de posts/notícias com imagens de capa.
 * **Acervo Fotográfico:** Galeria de imagens otimizadas em WebP com visualização em Lightbox.
 * **Contato:** Formulário público de contato integrado direto com o painel de administração.
-* **Acervo Histórico:** (Em desenvolvimento)
+* **Acervo Histórico:** Exposição online categorizada de peças e itens históricos do memorial, com detalhes e imagens.
 
 ### Painel Administrativo (Backoffice)
 * Protegido por Login/Senha e Tokens JWT.
 * **Gestão de Usuários:** Cadastro, edição e exclusão de usuários e administradores.
 * **Gestão de Páginas:** Editor de texto estilo Word para criar páginas fixas no site.
-* **Gestão de Notícias:** Cadastro de postagens com capa e conteúdo formatado.
+* **Gestão de Notícias e Eventos:** Cadastro de postagens com capa, definição de datas para eventos e conteúdo formatado.
 * **Arquivo Fotográfico:** Criação de álbuns e upload múltiplo de fotos com processamento inteligente (geração de miniatura automática e conversão para WebP).
 * **Caixa de Mensagens:** Recebimento e gerenciamento das mensagens enviadas pelo formulário de contato do site público.
 * **Acervo Histórico:** Gestão das peças e itens históricos do memorial.

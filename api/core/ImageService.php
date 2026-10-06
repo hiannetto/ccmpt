@@ -17,6 +17,7 @@ class ImageService {
     private $baseUploadDir;
     private $baseUrl;
     private $manager = null;
+    private $gdLoaded = false;
     private $maxFilesPerDirectory = 2500;
     private $allowedMimes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
 
