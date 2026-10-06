@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/10/2026 às 04:46
+-- Tempo de geração: 06/10/2026 às 22:17
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -73,6 +73,13 @@ CREATE TABLE `contacts` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `subject`, `message`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Hian Monteiro', 'hiannetto123@gmail.com', '32988442520', 'Teste', 'Posso testar seu sistema??????????', 'pendente', '2026-10-06 19:51:46', '2026-10-06 19:51:46');
+
 -- --------------------------------------------------------
 
 --
@@ -112,6 +119,13 @@ CREATE TABLE `memorial_items` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `memorial_items`
+--
+
+INSERT INTO `memorial_items` (`id`, `title`, `dating_label`, `year`, `inventory_number`, `historical_description`, `material`, `dimensions`, `provenance`, `conservation_state`, `main_image_url`, `main_image_caption`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Garrafa D\'água', NULL, 2024, NULL, '<p>Garrafa de água vermelha que eu roubei da minha mãe depois de ela acidentalmente quebrar a minha.</p>', NULL, NULL, 'Roubado por Hian Monteiro', 'ruim', '/uploads/memorial/batch_1/27ed54e6b1c5_1791312459.jpg', 'Foto da garrafa', '2026-10-06 18:47:32', '2026-10-06 18:47:39', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -144,9 +158,9 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `slug`, `content`, `is_published`, `show_in_menu`, `updated_at`) VALUES
-(1, 'A Instituição', 'instituicao', '<p>O Centro Cultural e Memorial Padre Tiago foi idealizado para preservar a memória...</p>', 1, 1, '2026-10-06 01:43:07'),
-(2, 'História do Padre Tiago', 'historia', '<p>Nascido na Itália, Padre Tiago dedicou sua vida...</p>', 1, 1, '2026-10-06 01:43:07'),
-(3, 'Projetos Sociais', 'projetos', '<p>Nossos projetos envolvem escolinha de futebol, aulas de música...</p>', 1, 1, '2026-10-06 01:43:07');
+(1, 'A Instituição', 'instituicao', '<h2><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Centro Cultural e Memorial Padre Tiago: Cultura, Memória e Transformação Social</span></h2><p><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">O Centro Cultural e Memorial Padre Tiago é um espaço de fomento à cultura, à educação e à cidadania, localizado no coração do bairro que carrega o nome de seu grande inspirador. Nascido do desejo de dar continuidade ao trabalho social e humanitário de Jacobus Adrianus Sigfridus Prins — o saudoso Padre Tiago —, a instituição atua como um polo de desenvolvimento humano e acolhimento para crianças, jovens e famílias de Muriaé.</span></p><p><br></p><h3><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Nosso Propósito</span></h3><p><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Se no passado o Projeto Pró-Moradia ergueu lares para garantir a segurança física da comunidade, hoje o Centro Cultural e Memorial atua na construção da dignidade intelectual e cidadã. Nossa missão é preservar a memória e os ideais do \"revolucionário do amor\", garantindo que seu legado de transformação social se mantenha vivo e ativo através do acesso democrático à arte, ao conhecimento e ao convívio comunitário.</span></p><p><br></p><h3><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Cultura e Cidadania em Movimento</span></h3><p><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">O espaço oferece uma infraestrutura dedicada ao aprendizado e à valorização de talentos, promovendo a integração social por meio de diversas frentes:</span></p><p><br></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Educação e Arte:</strong><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\"> Aulas de música e dança, proporcionando novas perspectivas, disciplina e oportunidades para os jovens da comunidade.</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><br></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Incentivo à Leitura:</strong><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\"> Uma sala de leitura estruturada para democratizar o acesso aos livros, estimular a imaginação e apoiar o desenvolvimento escolar.</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><br></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Acolhimento Comunitário:</strong><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\"> O centro orgulha-se de ser a casa de importantes iniciativas locais, servindo como base para os encontros do </span><strong style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Clube das Mães</strong><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\"> e como sede de ensaios e atividades da </span><strong style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Banda Marcial Bernadete Carneiro</strong><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">.</span></li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><br></li></ol><h3><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Nossa Trajetória</span></h3><p><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Formalmente constituída como entidade no final do ano de 2020, a organização alcançou um marco histórico em setembro de 2025, quando suas instalações físicas foram oficialmente entregues e inauguradas com o apoio da Prefeitura de Muriaé. Esse passo consolidou definitivamente a infraestrutura necessária para que o espaço se tornasse a principal referência de cultura e preservação histórica no bairro.</span></p><p><br></p><h3><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Visão de Futuro</span></h3><p><span style=\"color: rgb(31, 31, 31); background-color: rgba(0, 0, 0, 0);\">Acreditamos que a cultura é o alicerce para uma sociedade mais justa e com oportunidades igualitárias. O Centro Cultural e Memorial Padre Tiago de portas abertas reafirma, todos os dias, o compromisso de ser um ambiente onde o passado de luta é honrado, o presente é transformado pela arte e o futuro é construído com esperança.</span></p><p><br></p>', 1, 1, '2026-10-06 19:56:35'),
+(2, 'História do Padre Tiago', 'historia', '<h3>Quem Foi Padre Tiago?</h3><p>Jacobus Adrianus Sigfridus Prins, carinhosamente adotado pela nossa região como Padre Tiago, foi um líder espiritual e missionário que dedicou sua vida à transformação social. Nascido em Voorhout, na Holanda, em 29 de janeiro de 1930, ele chegou ao Brasil em 1962 pela Congregação dos Missionários do Sagrado Coração de Jesus. Sua trajetória é marcada pela profunda união entre o ministério religioso e a defesa ativa da dignidade humana.</p><h3>A Educação e o Caminho na Fé</h3><p>Antes de se tornar um símbolo de ação social, Padre Tiago atuou na formação intelectual da comunidade. Em seus primeiros anos no país, trabalhou como professor de latim, francês e história, acreditando na educação como ferramenta de emancipação. No campo religioso, liderou paróquias, reformou e construiu capelas e dedicou grande parte de seus últimos anos de ministério pastoral ao distrito de Itamuri, sempre próximo e acessível aos moradores.</p><h3>Projeto Pró-Moradia: Construindo Dignidade</h3><p>O maior símbolo de sua passagem por Muriaé é o Projeto Pró-Moradia. Incomodado com a desigualdade e a falta de infraestrutura para os mais vulneráveis, Padre Tiago organizou a sociedade civil, mobilizou doações e liderou mutirões para construir e entregar dezenas de casas populares. O projeto não apenas ergueu lares seguros, mas resgatou a cidadania de famílias inteiras que viviam em situação de risco, provando que a fé verdadeira se materializa em obras concretas.</p><h3>Um Revolucionário do Amor</h3><p>Falecido em 22 de junho de 2010, Padre Tiago deixou um vazio na comunidade, mas também um exemplo imortal. Seu trabalho contínuo e silencioso em prol dos mais pobres lhe rendeu o título de \"revolucionário do amor\" entre os paroquianos. Hoje, sua memória permanece viva nos bairros que ajudou a erguer e no coração de cada família que teve sua realidade transformada por sua compaixão e coragem.</p><h3>O Centro Cultural: O Legado em Movimento</h3><p>Para além das fundações de tijolo e cimento do Projeto Pró-Moradia, o compromisso de Padre Tiago com o desenvolvimento humano se perpetua de forma vibrante através do Centro Cultural que leva o seu nome. Situado no coração da comunidade que ele ajudou a erguer, o espaço é a prova de que sua missão ia muito além da infraestrutura física. Hoje, o centro atua como um polo de transformação e acolhimento, oferecendo acesso à arte, educação, convivência e cidadania. É nesse ambiente, que abraça crianças, jovens e famílias, que a visão transformadora do padre se mantém viva, garantindo que as novas gerações tenham não apenas um teto seguro, mas também o espaço e o estímulo necessários para crescerem intelectual e culturalmente.</p>', 1, 1, '2026-10-06 19:55:14'),
+(3, 'Nossos Projetos', 'projetos', '<h2>Projetos Sociais: O Coração do Nosso Centro Cultural</h2><p>No Centro Cultural e Memorial Padre Tiago, acreditamos que a verdadeira transformação social acontece na prática, no dia a dia, e em comunidade. Nossos projetos sociais são a alma da instituição e o reflexo vivo dos ideais de acolhimento e desenvolvimento humano deixados pelo Padre Tiago.</p><p>Através da arte, do esporte e da preservação das nossas tradições, oferecemos um ambiente seguro e estimulante onde crianças, jovens e adultos do bairro e de toda Muriaé podem descobrir seus talentos, fortalecer laços e construir novas perspectivas de vida.</p><p>Conheça as iniciativas que movimentam o nosso espaço:</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong>Banda Marcial Bernadete Carneiro:</strong> Muito mais do que o ensino musical, a banda promove a disciplina, o trabalho em equipe e o orgulho de pertencer a um grupo histórico, levando a cultura e o nome da nossa comunidade para apresentações em toda a região.</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong>Folia de Reis:</strong> Um compromisso profundo com a preservação da cultura popular e da fé. Apoiamos e mantemos viva essa tradição secular, garantindo que as raízes folclóricas de Minas Gerais sejam passadas de geração em geração.</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong>Quadrilha:</strong> Celebrando a alegria das nossas raízes, o grupo de quadrilha movimenta a comunidade, resgata as tradições festivas e promove a integração de todas as idades com muita dança, cores e ritmos populares.</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong>Capoeira:</strong> Uma poderosa ferramenta de inclusão e resistência. As aulas de capoeira unem esporte, arte, música e história afro-brasileira, ensinando aos alunos o respeito, a coordenação motora e o valor da nossa ancestralidade.</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong>Aulas de Dança:</strong> Um espaço dedicado à expressão corporal e à criatividade. A dança no Centro Cultural atende a diferentes estilos e idades, promovendo saúde física, bem-estar mental e autoconfiança.</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span><strong>Escolinha de Futebol:</strong> Muito além das quatro linhas, o esporte atua como uma escola de cidadania. Nossa escolinha de futebol incentiva a prática esportiva, afasta os jovens das ruas e ensina valores fundamentais como cooperação, respeito às regras e superação.</li></ol><h3>Transformando Vidas</h3><p>Cada um desses projetos é uma porta aberta para o futuro. O Centro Cultural e Memorial Padre Tiago se orgulha de ser o ponto de encontro onde a cultura popular é celebrada, o corpo é movimentado e a cidadania é construída todos os dias.</p>', 1, 1, '2026-10-06 19:58:29');
 
 -- --------------------------------------------------------
 
@@ -169,11 +183,35 @@ CREATE TABLE `photos` (
 -- Despejando dados para a tabela `photos`
 --
 
-INSERT INTO `photos` (`id`, `gallery_id`, `image_path`, `thumbnail_path`, `tags`, `created_at`, `deleted_at`) VALUES
-(5, 4, '/uploads/galleries/batch_1/bca208eb0832_1791254280.png', '/uploads/galleries/batch_1/bca208eb0832_1791254280.png', NULL, '2026-10-06 02:38:00', NULL),
-(6, 4, '/uploads/galleries/batch_1/e942d66f3e3f_1791254280.jpeg', '/uploads/galleries/batch_1/e942d66f3e3f_1791254280.jpeg', NULL, '2026-10-06 02:38:00', NULL),
-(7, 4, '/uploads/galleries/batch_1/2abed95e18c7_1791254280.png', '/uploads/galleries/batch_1/2abed95e18c7_1791254280.png', NULL, '2026-10-06 02:38:00', NULL),
-(8, 4, '/uploads/galleries/batch_1/7d2245bf08fb_1791254280.jpg', '/uploads/galleries/batch_1/7d2245bf08fb_1791254280.jpg', NULL, '2026-10-06 02:38:00', NULL);
+INSERT INTO `photos` (`id`, `gallery_id`, `image_path`, `thumbnail_path`, `caption`, `tags`, `created_at`, `deleted_at`) VALUES
+(12, 4, '/uploads/galleries/batch_1/9dc3dfc3ea12_1791311789.jpg', '/uploads/galleries/batch_1/9dc3dfc3ea12_1791311789.jpg', NULL, NULL, '2026-10-06 18:36:29', '2026-10-06 18:40:34'),
+(13, 4, '/uploads/galleries/batch_1/f1595be32ad0_1791311789.jpg', '/uploads/galleries/batch_1/f1595be32ad0_1791311789.jpg', NULL, NULL, '2026-10-06 18:36:29', '2026-10-06 18:40:49'),
+(14, 4, '/uploads/galleries/batch_1/f326ad77e035_1791311789.jpg', '/uploads/galleries/batch_1/f326ad77e035_1791311789.jpg', NULL, NULL, '2026-10-06 18:36:29', '2026-10-06 18:40:53'),
+(15, 4, '/uploads/galleries/batch_1/b1bfb983d770_1791311790.jpg', '/uploads/galleries/batch_1/b1bfb983d770_1791311790.jpg', NULL, NULL, '2026-10-06 18:36:30', '2026-10-06 18:40:56'),
+(16, 4, '/uploads/galleries/batch_1/04fde6f56dc2_1791312892.jpeg', '/uploads/galleries/batch_1/04fde6f56dc2_1791312892.jpeg', NULL, 'mercado livre mandou essa bomba errado kkkkk', '2026-10-06 18:54:52', NULL),
+(17, 4, '/uploads/galleries/batch_1/62247a6467aa_1791312926.png', '/uploads/galleries/batch_1/62247a6467aa_1791312926.png', NULL, NULL, '2026-10-06 18:55:26', NULL),
+(18, 5, '/uploads/galleries/batch_1/f50985e2e401_1791312963.jpg', '/uploads/galleries/batch_1/f50985e2e401_1791312963.jpg', NULL, NULL, '2026-10-06 18:56:03', NULL),
+(19, 5, '/uploads/galleries/batch_1/923a0497c4f6_1791312963.jpg', '/uploads/galleries/batch_1/923a0497c4f6_1791312963.jpg', NULL, NULL, '2026-10-06 18:56:03', NULL),
+(20, 5, '/uploads/galleries/batch_1/45b6282c9094_1791312981.jpg', '/uploads/galleries/batch_1/45b6282c9094_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(21, 5, '/uploads/galleries/batch_1/c4502dfdabad_1791312981.jpg', '/uploads/galleries/batch_1/c4502dfdabad_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(22, 5, '/uploads/galleries/batch_1/45da82c3383f_1791312981.png', '/uploads/galleries/batch_1/45da82c3383f_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(23, 5, '/uploads/galleries/batch_1/0f87e74ace2f_1791312981.png', '/uploads/galleries/batch_1/0f87e74ace2f_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(24, 5, '/uploads/galleries/batch_1/1fe83c642b63_1791312981.jpg', '/uploads/galleries/batch_1/1fe83c642b63_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(25, 5, '/uploads/galleries/batch_1/bea73890fcce_1791312981.jpg', '/uploads/galleries/batch_1/bea73890fcce_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(26, 5, '/uploads/galleries/batch_1/f10c273e8355_1791312981.jpg', '/uploads/galleries/batch_1/f10c273e8355_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(27, 5, '/uploads/galleries/batch_1/856091d9b388_1791312981.jpg', '/uploads/galleries/batch_1/856091d9b388_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(28, 5, '/uploads/galleries/batch_1/ac5beb622168_1791312981.jpg', '/uploads/galleries/batch_1/ac5beb622168_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(29, 5, '/uploads/galleries/batch_1/cde84ad475f9_1791312981.jpg', '/uploads/galleries/batch_1/cde84ad475f9_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(30, 5, '/uploads/galleries/batch_1/f12bd0a6f05c_1791312981.jpg', '/uploads/galleries/batch_1/f12bd0a6f05c_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(31, 5, '/uploads/galleries/batch_1/998eb2fb8f1f_1791312981.png', '/uploads/galleries/batch_1/998eb2fb8f1f_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(32, 5, '/uploads/galleries/batch_1/02acf718eddf_1791312981.jpg', '/uploads/galleries/batch_1/02acf718eddf_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(33, 5, '/uploads/galleries/batch_1/b32db1b069b6_1791312981.jpg', '/uploads/galleries/batch_1/b32db1b069b6_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(34, 5, '/uploads/galleries/batch_1/a5d39390cf8b_1791312981.jpg', '/uploads/galleries/batch_1/a5d39390cf8b_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(35, 5, '/uploads/galleries/batch_1/0cbfefcaf438_1791312981.jpg', '/uploads/galleries/batch_1/0cbfefcaf438_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(36, 5, '/uploads/galleries/batch_1/df9f2036e57a_1791312981.png', '/uploads/galleries/batch_1/df9f2036e57a_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(37, 5, '/uploads/galleries/batch_1/d68bc4126149_1791312981.png', '/uploads/galleries/batch_1/d68bc4126149_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(38, 5, '/uploads/galleries/batch_1/21664dbc1d69_1791312981.png', '/uploads/galleries/batch_1/21664dbc1d69_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
+(39, 5, '/uploads/galleries/batch_1/07054e0b612b_1791312981.jpg', '/uploads/galleries/batch_1/07054e0b612b_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -196,8 +234,9 @@ CREATE TABLE `photo_galleries` (
 -- Despejando dados para a tabela `photo_galleries`
 --
 
-INSERT INTO `photo_galleries` (`id`, `title`, `slug`, `description`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(4, 'Teste', 'teste', NULL, '2026-10-06 02:37:59', '2026-10-06 02:37:59', NULL);
+INSERT INTO `photo_galleries` (`id`, `title`, `slug`, `description`, `cover_photo_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(4, 'Teste', 'teste', NULL, 16, '2026-10-06 02:37:59', '2026-10-06 18:55:07', NULL),
+(5, 'Teste 2', 'teste-2', NULL, NULL, '2026-10-06 18:55:57', '2026-10-06 18:55:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -224,7 +263,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `type`, `title`, `slug`, `content`, `cover_image_url`, `event_date`, `is_published`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'news', 'Teste de Notícia', 'teste-de-noticia', '<h2>Ocorreu uma notícia hoje!</h2><p><br></p><p>Hoje <strong>aconteceu </strong>algo <em>inesquecível</em>: <u>biblia carregador fone.</u></p><p><br></p>', NULL, NULL, 1, '2026-10-06 02:42:23', '2026-10-06 02:42:23', NULL);
+(1, 'news', 'Teste de Notícia', 'teste-de-noticia', '<h2>Ocorreu uma notícia hoje!</h2><p><br></p><p>Hoje <strong>aconteceu </strong>algo <em>inesquecível</em>: <u>biblia carregador fone.</u></p><p><br></p>', NULL, NULL, 1, '2026-10-06 02:42:23', '2026-10-06 19:08:48', NULL);
 
 -- --------------------------------------------------------
 
@@ -336,7 +375,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de tabela `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `memorial_images`
@@ -348,7 +387,7 @@ ALTER TABLE `memorial_images`
 -- AUTO_INCREMENT de tabela `memorial_items`
 --
 ALTER TABLE `memorial_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `pages`
@@ -360,13 +399,13 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT de tabela `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de tabela `photo_galleries`
 --
 ALTER TABLE `photo_galleries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `posts`
