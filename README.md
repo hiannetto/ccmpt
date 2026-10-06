@@ -1,6 +1,6 @@
-# CCMPT - Centro Cultural e Memorial Padre Tullio
+# CCMPT - Centro Cultural e Memorial Padre Tiago
 
-Este repositório contém o código-fonte do site institucional e do sistema de Backoffice (gestão de conteúdo) do **Centro Cultural e Memorial Padre Tullio (CCMPT)**. O projeto foi desenvolvido como um Trabalho de Conclusão de Curso (TCC).
+Este repositório contém o código-fonte do site institucional e do sistema de Backoffice (gestão de conteúdo) do **Centro Cultural e Memorial Padre Tiago (CCMPT)**. O projeto foi desenvolvido como um Trabalho de Conclusão de Curso (TCC).
 
 O sistema possui uma arquitetura moderna e separada (Decoupled), com o frontend construído em **Vue.js** (SPA) e o backend servindo uma **API REST em PHP puro** conectada a um banco de dados MySQL.
 
