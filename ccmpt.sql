@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/10/2026 às 22:17
+-- Tempo de geração: 08/10/2026 às 17:06
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -263,7 +263,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `type`, `title`, `slug`, `content`, `cover_image_url`, `event_date`, `is_published`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'news', 'Teste de Notícia', 'teste-de-noticia', '<h2>Ocorreu uma notícia hoje!</h2><p><br></p><p>Hoje <strong>aconteceu </strong>algo <em>inesquecível</em>: <u>biblia carregador fone.</u></p><p><br></p>', NULL, NULL, 1, '2026-10-06 02:42:23', '2026-10-06 19:08:48', NULL);
+(1, 'news', 'Teste de Notícia', 'teste-de-noticia', '<h2>Ocorreu uma notícia hoje!</h2><p><br></p><p>Hoje <strong>aconteceu </strong>algo <em>inesquecível</em>: <u>biblia carregador fone.</u></p><p><br></p>', '/uploads/posts/batch_1/1471cd316fcb_1791471138.JPG', NULL, 1, '2026-10-06 02:42:23', '2026-10-08 14:52:18', NULL),
+(2, 'event', 'Quadrilha de Teste', 'quadrilha-de-teste', '<p>Sexta-feira dia 16/10 acontecerá a quadrilha 2026</p>', '/uploads/posts/batch_1/f0e07c96af18_1791471472.jpg', '2026-10-16 21:00:00', 1, '2026-10-08 14:57:52', '2026-10-08 14:57:52', NULL),
+(3, 'event', 'Quadrilha teste passado', 'quadrilha-teste-passado', '<p>quinta feira dia 01/10 acontecerá a quadrilha 2026</p>', '/uploads/posts/batch_1/660210cec378_1791471525.jpg', '2026-10-01 21:00:00', 1, '2026-10-08 14:58:45', '2026-10-08 14:58:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -411,7 +413,7 @@ ALTER TABLE `photo_galleries`
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `users`
