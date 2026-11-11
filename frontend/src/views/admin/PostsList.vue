@@ -52,16 +52,18 @@
               </span>
             </td>
             <td>{{ formatDate(post.created_at) }}</td>
-            <td class="actions">
-              <router-link :to="{ name: 'NewPost', query: { id: post.id } }" class="btn-action edit" title="Editar">
-                ✎
-              </router-link>
-              <a :href="'/noticias/' + post.slug" target="_blank" class="btn-action view" title="Ver no site">
-                👁
-              </a>
-              <button @click="deletePost(post.id)" class="btn-action delete" title="Excluir">
-                🗑
-              </button>
+            <td>
+              <div class="actions">
+                <router-link :to="{ name: 'NewPost', query: { id: post.id } }" class="btn-action edit" title="Editar">
+                  ✎
+                </router-link>
+                <a :href="'/noticias/' + post.slug" target="_blank" class="btn-action view" title="Ver no site">
+                  👁
+                </a>
+                <button @click="deletePost(post.id)" class="btn-action delete" title="Excluir">
+                  🗑
+                </button>
+              </div>
             </td>
           </tr>
         </tbody>

@@ -37,13 +37,15 @@
                 {{ contact.status === 'pendente' ? 'Pendente' : 'Atendido' }}
               </span>
             </td>
-            <td class="actions">
-              <button @click="openModal(contact)" class="btn-action view" title="Ler Mensagem Completa">
-                👁
-              </button>
-              <button @click="toggleStatus(contact)" class="btn-action toggle" :title="contact.status === 'pendente' ? 'Marcar como atendido' : 'Marcar como pendente'">
-                {{ contact.status === 'pendente' ? '✓' : '↺' }}
-              </button>
+            <td>
+              <div class="actions">
+                <button @click="openModal(contact)" class="btn-action view" title="Ler Mensagem Completa">
+                  👁
+                </button>
+                <button @click="toggleStatus(contact)" class="btn-action toggle" :title="contact.status === 'pendente' ? 'Marcar como atendido' : 'Marcar como pendente'">
+                  {{ contact.status === 'pendente' ? '✓' : '↺' }}
+                </button>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -169,7 +171,7 @@ h2 { margin: 0; color: var(--color-primary, #0B1C3D); }
 .badge-success { background: #e8f5e9; color: #1b5e20; }
 .badge-draft { background: #ffebee; color: #c62828; }
 
-.actions { display: flex; gap: 0.5rem; }
+.actions { display: flex; align-items: center; gap: 0.5rem; }
 .btn-action { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; text-decoration: none; cursor: pointer; border: 1px solid transparent; font-size: 1rem; }
 .btn-action.view { background: #e3f2fd; color: #1976d2; }
 .btn-action.toggle { background: #e9ecef; color: #495057; }

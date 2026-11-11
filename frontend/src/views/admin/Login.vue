@@ -2,7 +2,9 @@
   <div class="login-container">
     <div class="login-box">
       <div class="login-header">
-        <div class="logo-placeholder">CCMPT</div>
+        <div class="logo-circle">
+          <img src="/logotipo.jpg" alt="Centro Cultural e Memorial Padre Tiago" />
+        </div>
         <h2>Acesso Restrito</h2>
         <p>Painel de Gestão do Memorial</p>
       </div>
@@ -91,18 +93,24 @@ const handleLogin = async () => {
   margin-bottom: 2rem;
 }
 
-.logo-placeholder {
-  width: 64px;
-  height: 64px;
-  background-color: var(--color-secondary, #D4AF37);
-  color: white;
+.logo-circle {
+  width: 96px;
+  height: 96px;
+  background-color: #ffffff;
+  border: 2px solid var(--color-secondary, #D4AF37);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
   margin: 0 auto 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .login-header h2 {

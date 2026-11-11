@@ -32,9 +32,11 @@
             </td>
             <td>{{ item.year || item.dating_label || 'Não informada' }}</td>
             <td>{{ item.images_count }}</td>
-            <td class="actions">
-              <router-link :to="{ name: 'EditMemorial', params: { id: item.id } }" class="btn-edit">Editar</router-link>
-              <button @click="confirmDelete(item.id)" class="btn-delete">Excluir</button>
+            <td>
+              <div class="actions">
+                <router-link :to="{ name: 'EditMemorial', params: { id: item.id } }" class="btn-edit">Editar</router-link>
+                <button @click="confirmDelete(item.id)" class="btn-delete">Excluir</button>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -112,11 +114,11 @@ h2 { margin: 0; color: var(--color-primary, #0B1C3D); }
 .filters input { flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; }
 .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
 .data-table { width: 100%; border-collapse: collapse; }
-.data-table th, .data-table td { padding: 1rem; border-bottom: 1px solid #eee; text-align: left; }
-.thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; }
-.actions { display: flex; gap: 0.5rem; }
-.btn-edit { background: #ffc107; color: #000; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; font-size: 0.875rem; }
-.btn-delete { background: #dc3545; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; font-size: 0.875rem; cursor: pointer; }
+.data-table th, .data-table td { padding: 1rem; border-bottom: 1px solid #eee; text-align: left; vertical-align: middle; }
+.thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; display: block; }
+.actions { display: flex; align-items: center; gap: 0.5rem; }
+.btn-edit { background: #ffc107; color: #000; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; font-size: 0.875rem; display: inline-flex; align-items: center; white-space: nowrap; }
+.btn-delete { background: #dc3545; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; font-size: 0.875rem; cursor: pointer; display: inline-flex; align-items: center; }
 .loading, .empty-state { text-align: center; padding: 2rem; color: #666; }
 .pagination { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; }
 .pagination button { padding: 0.5rem 1rem; border: 1px solid #ddd; background: white; border-radius: 4px; cursor: pointer; }

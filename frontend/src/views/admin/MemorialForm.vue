@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label>Categorias</label>
         <div class="categories-list">
           <label v-for="cat in availableCategories" :key="cat.id">
@@ -37,7 +37,7 @@
             {{ cat.name }} ({{ cat.type }})
           </label>
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group">
         <label>Descrição e Contexto Histórico *</label>

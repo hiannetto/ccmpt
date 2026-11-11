@@ -34,16 +34,18 @@
                 {{ page.is_published ? 'Publicada' : 'Rascunho' }}
               </span>
             </td>
-            <td class="actions">
-              <router-link :to="{ name: 'NewPage', query: { id: page.id } }" class="btn-action edit" title="Editar">
-                ✎
-              </router-link>
-              <a :href="'/pagina/' + page.slug" target="_blank" class="btn-action view" title="Ver no site">
-                👁
-              </a>
-              <button @click="deletePage(page.id)" class="btn-action delete" title="Excluir">
-                🗑
-              </button>
+            <td>
+              <div class="actions">
+                <router-link :to="{ name: 'NewPage', query: { id: page.id } }" class="btn-action edit" title="Editar">
+                  ✎
+                </router-link>
+                <a :href="'/pagina/' + page.slug" target="_blank" class="btn-action view" title="Ver no site">
+                  👁
+                </a>
+                <button @click="deletePage(page.id)" class="btn-action delete" title="Excluir">
+                  🗑
+                </button>
+              </div>
             </td>
           </tr>
         </tbody>
