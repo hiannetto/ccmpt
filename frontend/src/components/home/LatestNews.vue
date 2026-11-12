@@ -21,7 +21,7 @@
       <div v-else class="posts-grid">
         <router-link v-for="post in news" :key="post.id" :to="{ name: 'PostDetail', params: { slug: post.slug } }" class="post-card">
           <div class="img-wrapper">
-            <img v-if="post.cover_image_url" :src="post.cover_image_url" :alt="post.title" loading="lazy" />
+            <img v-if="post.cover_thumbnail_url || post.cover_image_url" :src="post.cover_thumbnail_url || post.cover_image_url" :alt="post.title" loading="lazy" />
             <div v-else class="no-image">
               <PhNewspaper :size="48" weight="light" />
             </div>

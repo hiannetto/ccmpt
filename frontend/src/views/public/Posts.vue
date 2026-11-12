@@ -27,7 +27,7 @@
           <div v-else class="posts-grid">
             <router-link v-for="post in futureEvents" :key="post.id" :to="{ name: 'PostDetail', params: { slug: post.slug } }" class="post-card">
               <div class="img-wrapper">
-                <img v-if="post.cover_image_url" :src="post.cover_image_url" :alt="post.title" loading="lazy" />
+                <img v-if="post.cover_thumbnail_url || post.cover_image_url" :src="post.cover_thumbnail_url || post.cover_image_url" :alt="post.title" loading="lazy" />
                 <div v-else class="no-image">Sem Imagem</div>
                 <div class="date-badge event-badge">
                   <span>{{ formatEventDateShort(post.event_date) }}</span>
@@ -47,7 +47,7 @@
           <div class="posts-grid">
             <router-link v-for="post in pastEvents" :key="post.id" :to="{ name: 'PostDetail', params: { slug: post.slug } }" class="post-card past-event">
               <div class="img-wrapper">
-                <img v-if="post.cover_image_url" :src="post.cover_image_url" :alt="post.title" loading="lazy" />
+                <img v-if="post.cover_thumbnail_url || post.cover_image_url" :src="post.cover_thumbnail_url || post.cover_image_url" :alt="post.title" loading="lazy" />
                 <div v-else class="no-image">Sem Imagem</div>
                 <div class="date-badge event-badge past">
                   <span>{{ formatEventDateShort(post.event_date) }}</span>
@@ -67,7 +67,7 @@
           <div class="posts-grid">
             <router-link v-for="post in news" :key="post.id" :to="{ name: 'PostDetail', params: { slug: post.slug } }" class="post-card">
               <div class="img-wrapper">
-                <img v-if="post.cover_image_url" :src="post.cover_image_url" :alt="post.title" loading="lazy" />
+                <img v-if="post.cover_thumbnail_url || post.cover_image_url" :src="post.cover_thumbnail_url || post.cover_image_url" :alt="post.title" loading="lazy" />
                 <div v-else class="no-image">Sem Imagem</div>
                 <div class="date-badge news-badge">
                   <span>{{ formatPublishDateShort(post.created_at) }}</span>

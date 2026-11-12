@@ -25,7 +25,7 @@
             </td>
             <td><strong>{{ gallery.title }}</strong></td>
             <td>{{ gallery.description || '-' }}</td>
-            <td>{{ gallery.photos_count || 0 }}</td>
+            <td>{{ gallery.photo_count ?? gallery.photos_count ?? 0 }}</td>
             <td>{{ new Date(gallery.created_at).toLocaleDateString('pt-BR') }}</td>
             <td>
               <div class="actions">
