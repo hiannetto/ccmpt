@@ -48,7 +48,9 @@ class PhotoGallery extends Model {
         if (isset($g['cover_photo_id'])) {
             $g['cover_photo_id'] = $g['cover_photo_id'] ? (int) $g['cover_photo_id'] : null;
         }
-        $g['cover_thumbnail_url'] = \Core\ImageService::thumbFor($g['cover_thumbnail'] ?? '');
+        $g['cover_thumbnail_url'] = !empty($g['cover_thumbnail'])
+            ? \Core\ImageService::thumbFor($g['cover_thumbnail'])
+            : null;
         return $g;
     }
 }

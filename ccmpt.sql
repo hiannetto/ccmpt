@@ -73,13 +73,6 @@ CREATE TABLE `contacts` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `contacts`
---
-
-INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `subject`, `message`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Hian Monteiro', 'hiannetto123@gmail.com', '32988442520', 'Teste', 'Posso testar seu sistema??????????', 'pendente', '2026-10-06 19:51:46', '2026-10-06 19:51:46');
-
 -- --------------------------------------------------------
 
 --
@@ -118,13 +111,6 @@ CREATE TABLE `memorial_items` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `memorial_items`
---
-
-INSERT INTO `memorial_items` (`id`, `title`, `dating_label`, `year`, `inventory_number`, `historical_description`, `material`, `dimensions`, `provenance`, `conservation_state`, `main_image_url`, `main_image_caption`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Garrafa D\'água', NULL, 2024, NULL, '<p>Garrafa de água vermelha que eu roubei da minha mãe depois de ela acidentalmente quebrar a minha.</p>', NULL, NULL, 'Roubado por Hian Monteiro', 'ruim', '/uploads/memorial/batch_1/27ed54e6b1c5_1791312459.jpg', 'Foto da garrafa', '2026-10-06 18:47:32', '2026-10-06 18:47:39', NULL);
 
 -- --------------------------------------------------------
 
@@ -179,40 +165,6 @@ CREATE TABLE `photos` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `photos`
---
-
-INSERT INTO `photos` (`id`, `gallery_id`, `image_path`, `thumbnail_path`, `caption`, `tags`, `created_at`, `deleted_at`) VALUES
-(12, 4, '/uploads/galleries/batch_1/9dc3dfc3ea12_1791311789.jpg', '/uploads/galleries/batch_1/9dc3dfc3ea12_1791311789.jpg', NULL, NULL, '2026-10-06 18:36:29', '2026-10-06 18:40:34'),
-(13, 4, '/uploads/galleries/batch_1/f1595be32ad0_1791311789.jpg', '/uploads/galleries/batch_1/f1595be32ad0_1791311789.jpg', NULL, NULL, '2026-10-06 18:36:29', '2026-10-06 18:40:49'),
-(14, 4, '/uploads/galleries/batch_1/f326ad77e035_1791311789.jpg', '/uploads/galleries/batch_1/f326ad77e035_1791311789.jpg', NULL, NULL, '2026-10-06 18:36:29', '2026-10-06 18:40:53'),
-(15, 4, '/uploads/galleries/batch_1/b1bfb983d770_1791311790.jpg', '/uploads/galleries/batch_1/b1bfb983d770_1791311790.jpg', NULL, NULL, '2026-10-06 18:36:30', '2026-10-06 18:40:56'),
-(16, 4, '/uploads/galleries/batch_1/04fde6f56dc2_1791312892.jpeg', '/uploads/galleries/batch_1/04fde6f56dc2_1791312892.jpeg', NULL, 'mercado livre mandou essa bomba errado kkkkk', '2026-10-06 18:54:52', NULL),
-(17, 4, '/uploads/galleries/batch_1/62247a6467aa_1791312926.png', '/uploads/galleries/batch_1/62247a6467aa_1791312926.png', NULL, NULL, '2026-10-06 18:55:26', NULL),
-(18, 5, '/uploads/galleries/batch_1/f50985e2e401_1791312963.jpg', '/uploads/galleries/batch_1/f50985e2e401_1791312963.jpg', NULL, NULL, '2026-10-06 18:56:03', NULL),
-(19, 5, '/uploads/galleries/batch_1/923a0497c4f6_1791312963.jpg', '/uploads/galleries/batch_1/923a0497c4f6_1791312963.jpg', NULL, NULL, '2026-10-06 18:56:03', NULL),
-(20, 5, '/uploads/galleries/batch_1/45b6282c9094_1791312981.jpg', '/uploads/galleries/batch_1/45b6282c9094_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(21, 5, '/uploads/galleries/batch_1/c4502dfdabad_1791312981.jpg', '/uploads/galleries/batch_1/c4502dfdabad_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(22, 5, '/uploads/galleries/batch_1/45da82c3383f_1791312981.png', '/uploads/galleries/batch_1/45da82c3383f_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(23, 5, '/uploads/galleries/batch_1/0f87e74ace2f_1791312981.png', '/uploads/galleries/batch_1/0f87e74ace2f_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(24, 5, '/uploads/galleries/batch_1/1fe83c642b63_1791312981.jpg', '/uploads/galleries/batch_1/1fe83c642b63_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(25, 5, '/uploads/galleries/batch_1/bea73890fcce_1791312981.jpg', '/uploads/galleries/batch_1/bea73890fcce_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(26, 5, '/uploads/galleries/batch_1/f10c273e8355_1791312981.jpg', '/uploads/galleries/batch_1/f10c273e8355_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(27, 5, '/uploads/galleries/batch_1/856091d9b388_1791312981.jpg', '/uploads/galleries/batch_1/856091d9b388_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(28, 5, '/uploads/galleries/batch_1/ac5beb622168_1791312981.jpg', '/uploads/galleries/batch_1/ac5beb622168_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(29, 5, '/uploads/galleries/batch_1/cde84ad475f9_1791312981.jpg', '/uploads/galleries/batch_1/cde84ad475f9_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(30, 5, '/uploads/galleries/batch_1/f12bd0a6f05c_1791312981.jpg', '/uploads/galleries/batch_1/f12bd0a6f05c_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(31, 5, '/uploads/galleries/batch_1/998eb2fb8f1f_1791312981.png', '/uploads/galleries/batch_1/998eb2fb8f1f_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(32, 5, '/uploads/galleries/batch_1/02acf718eddf_1791312981.jpg', '/uploads/galleries/batch_1/02acf718eddf_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(33, 5, '/uploads/galleries/batch_1/b32db1b069b6_1791312981.jpg', '/uploads/galleries/batch_1/b32db1b069b6_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(34, 5, '/uploads/galleries/batch_1/a5d39390cf8b_1791312981.jpg', '/uploads/galleries/batch_1/a5d39390cf8b_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(35, 5, '/uploads/galleries/batch_1/0cbfefcaf438_1791312981.jpg', '/uploads/galleries/batch_1/0cbfefcaf438_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(36, 5, '/uploads/galleries/batch_1/df9f2036e57a_1791312981.png', '/uploads/galleries/batch_1/df9f2036e57a_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(37, 5, '/uploads/galleries/batch_1/d68bc4126149_1791312981.png', '/uploads/galleries/batch_1/d68bc4126149_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(38, 5, '/uploads/galleries/batch_1/21664dbc1d69_1791312981.png', '/uploads/galleries/batch_1/21664dbc1d69_1791312981.png', NULL, NULL, '2026-10-06 18:56:21', NULL),
-(39, 5, '/uploads/galleries/batch_1/07054e0b612b_1791312981.jpg', '/uploads/galleries/batch_1/07054e0b612b_1791312981.jpg', NULL, NULL, '2026-10-06 18:56:21', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -229,15 +181,6 @@ CREATE TABLE `photo_galleries` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `photo_galleries`
---
-
-INSERT INTO `photo_galleries` (`id`, `title`, `slug`, `description`, `cover_photo_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(4, 'Teste', 'teste', NULL, 16, '2026-10-06 02:37:59', '2026-10-06 18:55:07', NULL),
-(5, 'Teste 2', 'teste-2', NULL, NULL, '2026-10-06 18:55:57', '2026-10-06 18:55:57', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -257,16 +200,6 @@ CREATE TABLE `posts` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `posts`
---
-
-INSERT INTO `posts` (`id`, `type`, `title`, `slug`, `content`, `cover_image_url`, `event_date`, `is_published`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'news', 'Teste de Notícia', 'teste-de-noticia', '<h2>Ocorreu uma notícia hoje!</h2><p><br></p><p>Hoje <strong>aconteceu </strong>algo <em>inesquecível</em>: <u>biblia carregador fone.</u></p><p><br></p>', '/uploads/posts/batch_1/1471cd316fcb_1791471138.JPG', NULL, 1, '2026-10-06 02:42:23', '2026-10-08 14:52:18', NULL),
-(2, 'event', 'Quadrilha de Teste', 'quadrilha-de-teste', '<p>Sexta-feira dia 16/10 acontecerá a quadrilha 2026</p>', '/uploads/posts/batch_1/f0e07c96af18_1791471472.jpg', '2026-10-16 21:00:00', 1, '2026-10-08 14:57:52', '2026-10-08 14:57:52', NULL),
-(3, 'event', 'Quadrilha teste passado', 'quadrilha-teste-passado', '<p>quinta feira dia 01/10 acontecerá a quadrilha 2026</p>', '/uploads/posts/batch_1/660210cec378_1791471525.jpg', '2026-10-01 21:00:00', 1, '2026-10-08 14:58:45', '2026-10-08 14:58:45', NULL);
-
 -- --------------------------------------------------------
 
 --

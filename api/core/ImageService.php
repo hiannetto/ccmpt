@@ -88,7 +88,7 @@ class ImageService {
         if (!$imagePath) {
             return null;
         }
-        return preg_replace('/\.webp$/', '_thumb.webp', $imagePath);
+        return preg_replace('/(?<!_thumb)\.webp$/', '_thumb.webp', $imagePath);
     }
 
     private function validate($file) {
