@@ -224,13 +224,17 @@ const saveItem = async () => {
       await api.post(`/memorial/${itemId.value}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
+      if (mainImageInput.value) mainImageInput.value.value = '';
       success.value = 'Item atualizado com sucesso!';
-      loadItem(); // recarrega para atualizar a capa atual
+      await loadItem(); // recarrega para atualizar a capa atual
     } else {
       const res = await api.post('/memorial', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
-      router.push({ name: 'EditMemorial', params: { id: res.data.id } });
+      if (mainImageInput.value) mainImageInput.value.value = '';
+      success.value = 'Item salvo com sucesso!';
+      await router.push({ name: 'EditMemorial', params: { id: res.data.id } });
+      await loadItem();
     }
   } catch (e) {
     error.value = e.response?.data?.error || 'Erro ao salvar o item.';
@@ -311,7 +315,8 @@ h2 { margin: 0; color: var(--color-primary, #0B1C3D); }
 
 .form-group { margin-bottom: 1.5rem; }
 .form-group label { display: block; font-weight: 500; margin-bottom: 0.5rem; }
-.form-group input[type="text"], .form-group input[type="number"], .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #ced4da; border-radius: 4px; font-family: inherit; }
+.form-group input[type="text"], .form-group input[type="number"], .form-group select { width: 100%; height: 42px; padding: 0 0.75rem; border: 1px solid #ced4da; border-radius: 4px; font-family: inherit; font-size: 0.95rem; background-color: white; }
+.form-group select { padding-right: 2.25rem; }
 
 .form-row { display: flex; gap: 1rem; }
 .form-row .form-group { flex: 1; }

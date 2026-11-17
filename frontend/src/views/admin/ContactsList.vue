@@ -40,10 +40,11 @@
             <td>
               <div class="actions">
                 <button @click="openModal(contact)" class="btn-action view" title="Ler Mensagem Completa">
-                  👁
+                  <PhEye :size="16" />
                 </button>
                 <button @click="toggleStatus(contact)" class="btn-action toggle" :title="contact.status === 'pendente' ? 'Marcar como atendido' : 'Marcar como pendente'">
-                  {{ contact.status === 'pendente' ? '✓' : '↺' }}
+                  <PhCheck v-if="contact.status === 'pendente'" :size="16" weight="bold" />
+                  <PhArrowCounterClockwise v-else :size="16" weight="bold" />
                 </button>
               </div>
             </td>
@@ -90,6 +91,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { PhEye, PhCheck, PhArrowCounterClockwise } from '@phosphor-icons/vue';
 import api from '../../api';
 
 const contacts = ref([]);
@@ -154,7 +156,7 @@ onMounted(() => {
 .list-container { max-width: 1000px; margin: 0 auto; padding-bottom: 2rem; }
 .header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
 h2 { margin: 0; color: var(--color-primary, #0B1C3D); }
-.filters select { padding: 0.5rem; border: 1px solid #ced4da; border-radius: 4px; font-size: 1rem; }
+.filters select { height: 40px; padding: 0 2.25rem 0 0.75rem; border: 1px solid #ced4da; border-radius: 4px; font-size: 0.95rem; background-color: white; }
 
 .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
 

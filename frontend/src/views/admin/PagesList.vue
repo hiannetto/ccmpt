@@ -37,13 +37,13 @@
             <td>
               <div class="actions">
                 <router-link :to="{ name: 'NewPage', query: { id: page.id } }" class="btn-action edit" title="Editar">
-                  ✎
+                  <PhPencilSimple :size="16" weight="fill" />
                 </router-link>
                 <a :href="'/pagina/' + page.slug" target="_blank" class="btn-action view" title="Ver no site">
-                  👁
+                  <PhEye :size="16" />
                 </a>
                 <button @click="deletePage(page.id)" class="btn-action delete" title="Excluir">
-                  🗑
+                  <PhTrash :size="16" />
                 </button>
               </div>
             </td>
@@ -60,6 +60,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { PhPencilSimple, PhEye, PhTrash } from '@phosphor-icons/vue';
 import api from '../../api';
 
 const pages = ref([]);

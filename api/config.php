@@ -5,10 +5,10 @@
  */
 return [
     'db' => [
-        'host'     => getenv('DB_HOST') ?: 'localhost',
+        'host'     => getenv('DB_HOST') ?: '127.0.0.1',
         'name'     => getenv('DB_NAME') ?: 'ccmpt',
         'user'     => getenv('DB_USER') ?: 'root',
-        'password' => getenv('DB_PASS') !== false ? getenv('DB_PASS') : '',
+        'password' => getenv('DB_PASS') !== false ? getenv('DB_PASS') : 'root',
     ],
 
     // Troque por uma string longa e aleatória em produção

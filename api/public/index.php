@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // Qualquer erro inesperado vira JSON (nunca HTML no meio da resposta)
+ini_set('display_errors', '0');
 set_exception_handler(function ($e) {
     error_log($e);
     Response::error('Erro interno no servidor.', 500);

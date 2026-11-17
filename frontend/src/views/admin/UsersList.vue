@@ -198,7 +198,8 @@ h2 { margin: 0; color: var(--color-primary, #0B1C3D); }
 
 .form-group { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
 .form-group label { font-weight: 500; color: #444; font-size: 0.95rem; }
-.form-group input, .form-group select { padding: 0.75rem; border: 1px solid #ced4da; border-radius: 4px; font-size: 1rem; }
+.form-group input, .form-group select { height: 42px; padding: 0 0.75rem; border: 1px solid #ced4da; border-radius: 4px; font-size: 0.95rem; background-color: white; }
+.form-group select { padding-right: 2.25rem; }
 
 .modal-actions { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #eee; }
 </style>

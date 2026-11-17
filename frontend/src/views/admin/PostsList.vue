@@ -55,13 +55,13 @@
             <td>
               <div class="actions">
                 <router-link :to="{ name: 'NewPost', query: { id: post.id } }" class="btn-action edit" title="Editar">
-                  ✎
+                  <PhPencilSimple :size="16" weight="fill" />
                 </router-link>
                 <a :href="'/noticias/' + post.slug" target="_blank" class="btn-action view" title="Ver no site">
-                  👁
+                  <PhEye :size="16" />
                 </a>
                 <button @click="deletePost(post.id)" class="btn-action delete" title="Excluir">
-                  🗑
+                  <PhTrash :size="16" />
                 </button>
               </div>
             </td>
@@ -85,6 +85,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { PhPencilSimple, PhEye, PhTrash } from '@phosphor-icons/vue';
 import api from '../../api';
 
 const posts = ref([]);
@@ -158,8 +159,9 @@ h2 { margin: 0; color: var(--color-primary, #0B1C3D); }
 .filters { display: flex; gap: 1rem; align-items: flex-end; }
 .filter-group { flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
 .filter-group label { font-size: 0.9rem; font-weight: 500; }
-.filter-group input, .filter-group select { padding: 0.6rem; border: 1px solid #ced4da; border-radius: 4px; }
-.btn-search { flex: 0 0 auto; }
+.filter-group input, .filter-group select { height: 42px; padding: 0 0.75rem; border: 1px solid #ced4da; border-radius: 4px; font-size: 0.95rem; font-family: inherit; background-color: white; }
+.filter-group select { padding-right: 2.25rem; }
+.btn-search { flex: 0 0 auto; height: 42px; padding: 0 1.5rem; display: inline-flex; align-items: center; justify-content: center; font-size: 0.95rem; }
 
 .data-table { width: 100%; border-collapse: collapse; }
 .data-table th { text-align: left; padding: 1rem; background: #f8f9fa; border-bottom: 2px solid #dee2e6; color: #495057; font-weight: 600; }

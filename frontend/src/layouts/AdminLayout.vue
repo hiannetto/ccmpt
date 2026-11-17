@@ -58,6 +58,10 @@ const doLogout = () => {
 
 .sidebar {
   width: 260px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
   background-color: var(--color-primary, #0B1C3D);
   color: white;
   display: flex;
@@ -86,6 +90,7 @@ const doLogout = () => {
   padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .sidebar-nav a {

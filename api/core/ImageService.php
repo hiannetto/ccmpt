@@ -154,11 +154,11 @@ class ImageService {
             imagealphablending($resized, false);
             imagesavealpha($resized, true);
             imagecopyresampled($resized, $image, 0, 0, 0, 0, $maxWidth, $newHeight, $width, $height);
-            imagedestroy($image);
+            unset($image);
             $image = $resized;
         }
 
         imagewebp($image, $destinationPath, $quality);
-        imagedestroy($image);
+        unset($image);
     }
 }
